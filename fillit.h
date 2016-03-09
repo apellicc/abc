@@ -21,7 +21,7 @@ int		ft_error(char **save);
 int		ft_nbpiece(char *buff);
 int		ft_displace(char *save);
 char	*ft_replace(char *save, char p);
-void	ft_backtrack(char **map, char **save, int **coord, int max);
+char  **ft_backtrack(char **map, char **save, int **coord, int max);
 char	**ft_mapalloc(char **map, int t);
 void	ft_remove(char **map, char c);
 int		inc_max(int *coord, int max, int i);

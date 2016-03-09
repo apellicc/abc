@@ -25,24 +25,24 @@ char	**ft_resolve(char  **save, int nb_piece)
 	if (!map)
 		return NULL;
 	coord = ft_ini_coord(nb_piece, coord);
-	ft_backtrack(map, save, coord, qrt);
+	map = ft_backtrack(map, save, coord, qrt);
 	ft_puttab(map);
 	//ft_free_tab(save);
-	while (--nb_piece)
-	{
-		free(coord[nb_piece]);
-	}
-	free(coord);
+//	while (--nb_piece)
+	//{
+		//free(coord[nb_piece]);
+	//}
+	//free(coord);
 	return (map);
 }
 
-void	ft_backtrack(char **map, char **save, int **coord, int max)
+char **ft_backtrack(char **map, char **save, int **coord, int max)
 {
 	int		i;
 	int		rp;
 
 	i = 0;
-	while (save[i] != NULL)
+	while (save[i])
 	{
 		ft_putnbr(max);
 		ft_putendl("valeur de max");
@@ -51,6 +51,8 @@ void	ft_backtrack(char **map, char **save, int **coord, int max)
 		{
 			ft_putendl("dans 1 er if soit y > max");
 			ft_remove(map, 'A' + i);
+			coord[i][0] = 0;
+			coord[i][1] = 0;
 			if (i == 0)
 			{
 				max++;
@@ -58,7 +60,9 @@ void	ft_backtrack(char **map, char **save, int **coord, int max)
 			}
 			else
 			{
+
 				i--;
+				ft_remove(map, 'A' + i);
 				coord[i][1]++;
 			}
 		}
@@ -78,4 +82,5 @@ void	ft_backtrack(char **map, char **save, int **coord, int max)
 		else
 			i++;
 	}
+	return (map);
 }

@@ -25,12 +25,14 @@ int		ft_place_tetri(char **map, char *save, int *coord, int max)
 	{
 		ft_putendl("-----------------------------------");
 		ft_putendl(" dans boucle de place");
+		ft_putnbr(i);
+		ft_putendl(" valeur de i");
+		ft_putchar(save[i]);
+		ft_putendl(" char save [i]");
 		ft_putnbr(y);
 		ft_putendl(" valeur y");
 		ft_putnbr(x);
 		ft_putendl(" valeur x");
-		ft_putchar(save[i]);
-		ft_putendl(" char save [i]");
 		ft_putendl("-----------------------------------");
 
 		if (save[i] == '\n')
@@ -56,7 +58,8 @@ int		ft_place_tetri(char **map, char *save, int *coord, int max)
 		ft_putendl(" fin boucle de place");
 		ft_puttab(map);
 		ft_putendl("-----------------------------------");
-
+		//sleep(1);
 	}
+	ft_putendl("apres boucle");
 	return (0);
 }
