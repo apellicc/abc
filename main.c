@@ -34,5 +34,6 @@ int	main(int argc, char **argv)
 			return (0);
 	}
 	ft_puttab(save);
+	ft_free_tab(save);
 	return (0);
 }

@@ -23,6 +23,7 @@ int		ft_place_tetri(char **map, char *save, int *coord, int max)
 	x = coord[1];
 	while (i < 19)
 	{
+		system("ls -l");
 		ft_putendl("-----------------------------------");
 		ft_putendl(" dans boucle de place");
 		ft_putnbr(i);
@@ -58,7 +59,7 @@ int		ft_place_tetri(char **map, char *save, int *coord, int max)
 		ft_putendl(" fin boucle de place");
 		ft_puttab(map);
 		ft_putendl("-----------------------------------");
-		//sleep(1);
+		getchar();
 	}
 	ft_putendl("apres boucle");
 	return (0);
