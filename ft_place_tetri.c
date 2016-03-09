@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_place_tetri.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: apellicc <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: apellicc <apellicc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/06 04:03:22 by apellicc          #+#    #+#             */
-/*   Updated: 2016/03/06 04:04:31 by apellicc         ###   ########.fr       */
+/*   Updated: 2016/03/09 11:58:20 by apellicc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,78 +23,40 @@ int		ft_place_tetri(char **map, char *save, int *coord, int max)
 	x = coord[1];
 	while (i < 19)
 	{
-		ft_putendl("dans boucle");
-		ft_puttab(map);
-		ft_putchar(save[i]);
-		ft_putendl("   valeur de save de i");
-		//ft_putchar(map[y][x]);
-		ft_putendl("    valeur de map[y][x]");
+		ft_putendl("-----------------------------------");
+		ft_putendl(" dans boucle de place");
 		ft_putnbr(y);
-		ft_putendl("valeur de y ");
+		ft_putendl(" valeur y");
 		ft_putnbr(x);
-		ft_putendl("valeur de x");
-		ft_putnbr(i);
-		ft_putendl("valeur de i");
+		ft_putendl(" valeur x");
+		ft_putchar(save[i]);
+		ft_putendl(" char save [i]");
+		ft_putendl("-----------------------------------");
+
 		if (save[i] == '\n')
 		{
+			i++;
 			y++;
 			x = coord[1];
-			ft_putendl("dans 1er if");
 		}
-	//	else if (save[i] != '.' && save[i] !=  '\n' )
-		else if (save[i] != '.' && map[y][x] != '.')
-		{
-			ft_putnbr(y);
-				ft_putendl("valeur de y dans return 2");
-				ft_putnbr(x);
-				ft_putendl("valeur de x");
-				sleep(2);	
+		else if (y == max && save[i] != '.')
+			return (1);
+		else if (x == max && save[i] != '.')
 			return (2);
-		}
-
-		else if ((y >= max || x >= max) && save[i] != '.')
-			{
-				ft_putnbr(max);
-				ft_putendl("valeur de max");
-				ft_putnbr(y);
-				ft_putendl("valeur de y dans return 1");
-				ft_putnbr(x);
-				ft_putendl("valeur de x");
-				sleep(2);	
-				return (1);
-			}
-		
-		else if (map[y][x] == '.')
+		else if (save[i] != '.' && map[y][x] != '.')
+			return (3);
+		else
 		{
-			ft_putendl("dans dernier else if");
 			if (save[i] != '.')
 				map[y][x] = save[i];
+			i++;
 			x++;
 		}
-		i++;
+		ft_putendl("-----------------------------------");
+		ft_putendl(" fin boucle de place");
+		ft_puttab(map);
+		ft_putendl("-----------------------------------");
+
 	}
 	return (0);
-}
-
-void	ft_remove(char **map, char c)
-{
-	int x;
-	int y;
-
-	y = -1;
-	while (map[++y])
-	{
-		ft_putnbr(y);
-		ft_putendl("valeur de y dans remove");
-		
-		x = -1;
-		while (map[y][++x])
-		{
-			ft_putnbr(x);
-			ft_putendl("valeur de x");
-			if (map[y][x] == c)
-				map[y][x] = '.';
-		}
-	}
-	ft_putendl("apres remove");
 }

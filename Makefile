@@ -8,7 +8,8 @@ SOURCE	= 	main.c\
 			ft_mapalloc.c\
 			ft_displace.c\
 			ft_place_tetri.c\
-			ft_ini_coord.c
+			ft_ini_coord.c\
+			ft_remove.c
 OBJ		= 	$(SOURCE:.c=.o)
 
 FLAGS	= -Wall -Wextra -Werror
