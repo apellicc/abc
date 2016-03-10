@@ -6,39 +6,32 @@
 /*   By: apellicc <apellicc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/06 04:03:22 by apellicc          #+#    #+#             */
-/*   Updated: 2016/03/09 11:58:20 by apellicc         ###   ########.fr       */
+/*   Updated: 2016/03/10 23:04:48 by apellicc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int		ft_place_tetri(char **map, char *save, int *coord, int max)
+static void	ft_else(char **map, char savei, int y, int *x)
+{
+	if (savei != '.')
+		map[y][*x] = savei;
+	*x += 1;
+}
+
+int			ft_place_tetri(char **map, char *save, int *coord, int max)
 {
 	int i;
 	int y;
 	int x;
 
-	i = 0;
+	i = -1;
 	y = coord[0];
 	x = coord[1];
-	while (i < 19)
+	while (++i < 19)
 	{
-		system("ls -l");
-		ft_putendl("-----------------------------------");
-		ft_putendl(" dans boucle de place");
-		ft_putnbr(i);
-		ft_putendl(" valeur de i");
-		ft_putchar(save[i]);
-		ft_putendl(" char save [i]");
-		ft_putnbr(y);
-		ft_putendl(" valeur y");
-		ft_putnbr(x);
-		ft_putendl(" valeur x");
-		ft_putendl("-----------------------------------");
-
 		if (save[i] == '\n')
 		{
-			i++;
 			y++;
 			x = coord[1];
 		}
@@ -49,18 +42,7 @@ int		ft_place_tetri(char **map, char *save, int *coord, int max)
 		else if (save[i] != '.' && map[y][x] != '.')
 			return (3);
 		else
-		{
-			if (save[i] != '.')
-				map[y][x] = save[i];
-			i++;
-			x++;
-		}
-		ft_putendl("-----------------------------------");
-		ft_putendl(" fin boucle de place");
-		ft_puttab(map);
-		ft_putendl("-----------------------------------");
-		getchar();
+			ft_else(map, save[i], y, &x);
 	}
-	ft_putendl("apres boucle");
 	return (0);
 }

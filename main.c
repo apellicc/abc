@@ -14,7 +14,6 @@
 
 int	main(int argc, char **argv)
 {
-	int		error;
 	char	**save;
 	int		nb_piece;
 
@@ -22,13 +21,14 @@ int	main(int argc, char **argv)
 		ft_putendl("usage: fillit file");
 	if (argc != 2)
 		return (0);
+	nb_piece = 0;
+	ft_putendl("avant save");
 	save = ft_save(argv[1]);
-	nb_piece = ft_tablen(save);
-	error = ft_error(save);
-	if (error != 0)
+	if (!save)
 		ft_putendl("error");
 	else
 	{
+		nb_piece = ft_tablen(save);
 		save = ft_resolve(save, nb_piece);
 		if (!save)
 			return (0);

@@ -15,21 +15,35 @@
 char	**ft_save(char *map)
 {
 	int		fd;
-	char	buff[546];
+	char	*buff;
 	char	**save;
+	int		r;
 
 	fd = open(map, O_RDONLY);
 	if (fd < 0)
 		return (NULL);
-	read(fd, buff, BUFF);
+	buff = ft_memalloc(600);
+	r = read(fd, buff, BUFF);
+	close(fd);
+	if (ft_error(buff, r) == 0)
+		return (NULL);
+	ft_putendl("avant savalloc");
 	save = ft_savealloc(buff);
+
 	if (!save)
 		return (NULL);
+	ft_putendl("avant cpy");
 	save = ft_cpy(buff, save);
-	close(fd);
+	free(buff);
+	if(!save[0] && !save[0][0])
+		ft_putendl("niaue ta rqce");
+	ft_putendl("avant cpy");
+
 	fd = -1;
 	while (save[++fd] != NULL)
 		save[fd] = ft_replace(save[fd], fd + 65);
+		ft_putendl("fin save");
+
 	return (save);
 }
 
@@ -40,8 +54,10 @@ char	*ft_replace(char *save, char p)
 
 	i = 0;
 	i1 = 0;
+	ft_putendl("avant displace");
 	if (save[0] != '#')
 		i1 = ft_displace(save);
+	ft_putendl("apres diplace");
 	while (save[i] != '\0')
 	{
 		if (save[i] == '#')
@@ -51,6 +67,7 @@ char	*ft_replace(char *save, char p)
 		}
 		i++;
 	}
+	ft_putendl("fin replace");
 	return (save);
 }
 

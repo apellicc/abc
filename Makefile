@@ -9,10 +9,11 @@ SOURCE	= 	main.c\
 			ft_displace.c\
 			ft_place_tetri.c\
 			ft_ini_coord.c\
-			ft_remove.c
+			ft_remove.c\
+			ft_rp1.c
 OBJ		= 	$(SOURCE:.c=.o)
 
-FLAGS	= -Wall -Wextra -Werror
+FLAGS	= -Wall -Wextra -Werror -g
 
 CC		=	gcc
 

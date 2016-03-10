@@ -19,12 +19,18 @@ static int 	ft_line(char *save)
 
 	i = 0;
 	line = 0;
+	ft_putendl("debut line");
+	ft_putendl(save);
 	while (save[i] != '#')
 	{
+		ft_putendl("dans boucle lien ");
+		ft_putchar(save[i]);
+		//getchar();
 		if (save[i] == '\n')
 			line++;
 		i++;
 	}
+	ft_putendl("fin line ");
 	return (line);
 }
 
@@ -36,6 +42,7 @@ int			ft_displace(char *save)
 
 	i = 0;
 	i1 = 19;
+	ft_putendl("debut dispale");
 	while (save[i] != '\0')
 	{
 		if (i == 0 || save[i] == '\n')
@@ -49,7 +56,7 @@ int			ft_displace(char *save)
 		i++;
 		tmp++;
 	}
+	ft_putendl("avant line ");
 	tmp = ft_line(save);
 	return (i1 + (tmp * 5));
 }
-

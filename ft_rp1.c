@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_puttab.c                                        :+:      :+:    :+:   */
+/*   ft_rp1.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: apellicc <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: apellicc <apellicc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/28 17:14:32 by apellicc          #+#    #+#             */
-/*   Updated: 2016/02/29 20:00:55 by apellicc         ###   ########.fr       */
+/*   Created: 2016/03/10 21:01:56 by apellicc          #+#    #+#             */
+/*   Updated: 2016/03/10 22:53:06 by apellicc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-void	ft_puttab(char **save)
+char	**ft_rp1(int **coord, int *max, int *i, char **map)
 {
-	int	i;
-
-	i = 0;
-	ft_putendl("puttab1");
-	//ft_putstr(save[i]);
-	while (save[i] != NULL)
+	coord[*i][0] = 0;
+	coord[*i][1] = 0;
+	if (*i == 0)
 	{
-		ft_putendl(save[i]);
-		i++;
+		*max += 1;
+		map = ft_mapalloc(map, *max);
 	}
+	else
+	{
+		*i -= 1;
+		ft_remove(map, 'A' + *i);
+		coord[*i][1] += 1;
+	}
+	return (map);
 }

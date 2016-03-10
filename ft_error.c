@@ -12,10 +12,12 @@
 
 #include "fillit.h"
 
-int ft_error(char **save)
+int ft_error(char *buff, int r)
 {
 	int error;
-	(void)save;
-	error = 0;
+	ft_putendl("dans error");
+	(void)buff;
+	(void)r;
+	error = 1;
 	return (error);
 }
