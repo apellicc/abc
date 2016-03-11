@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: apellicc <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: apellicc <apellicc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/06 03:30:26 by apellicc          #+#    #+#             */
-/*   Updated: 2016/03/06 03:30:30 by apellicc         ###   ########.fr       */
+/*   Updated: 2016/03/11 19:28:44 by apellicc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ int	main(int argc, char **argv)
 	if (argc != 2)
 		return (0);
 	nb_piece = 0;
-	ft_putendl("avant save");
 	save = ft_save(argv[1]);
 	if (!save)
 		ft_putendl("error");

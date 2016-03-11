@@ -6,7 +6,7 @@
 /*   By: apellicc <apellicc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/09 10:22:58 by apellicc          #+#    #+#             */
-/*   Updated: 2016/03/10 21:52:10 by apellicc         ###   ########.fr       */
+/*   Updated: 2016/03/11 19:29:46 by apellicc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ char	**ft_resolve(char **save, int nb_piece)
 	map = ft_mapalloc(map, qrt);
 	if (!map)
 		return (NULL);
+	//ft_putendl("tarace");
 	coord = ft_ini_coord(nb_piece, coord);
 	map = ft_backtrack(map, save, coord, qrt);
 	ft_puttab(map);
@@ -48,7 +49,12 @@ char	**ft_backtrack(char **map, char **save, int **coord, int max)
 		if (rp != 0)
 			ft_remove(map, 'A' + i);
 		if (rp == 1)
+		{
+			ft_putnbr(i);
+			ft_putendl(" avant");
 			map = ft_rp1(coord, &max, &i, map);
+
+		}
 		else if (rp == 2)
 		{
 			coord[i][0]++;

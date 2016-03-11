@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_save.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: apellicc <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: apellicc <apellicc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/28 17:06:04 by apellicc          #+#    #+#             */
-/*   Updated: 2016/03/04 02:27:49 by apellicc         ###   ########.fr       */
+/*   Updated: 2016/03/11 19:30:35 by apellicc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ char	**ft_save(char *map)
 	buff = ft_memalloc(600);
 	r = read(fd, buff, BUFF);
 	close(fd);
-	if (ft_error(buff, r) == 0)
-		return (NULL);
+	//if (ft_error(buff, r) == 0)
+	//	return (NULL);
 	ft_putendl("avant savalloc");
 	save = ft_savealloc(buff);
 

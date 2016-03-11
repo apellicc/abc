@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_mapalloc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: apellicc <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: apellicc <apellicc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/29 20:45:05 by apellicc          #+#    #+#             */
-/*   Updated: 2016/03/05 03:34:04 by apellicc         ###   ########.fr       */
+/*   Updated: 2016/03/11 19:27:25 by apellicc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	**ft_mapalloc(char **map, int t)
 {
 	char	**newmap;
 	int		i;
-	
+
 	i = -1;
 	ft_putnbr(t);
 	ft_putendl("num alloc  ");
@@ -46,4 +46,3 @@ char	**ft_mapalloc(char **map, int t)
 	ft_putendl("------------------------");
 	return (newmap);
 }
-
