@@ -6,7 +6,7 @@
 /*   By: apellicc <apellicc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/29 20:45:05 by apellicc          #+#    #+#             */
-/*   Updated: 2016/03/11 19:27:25 by apellicc         ###   ########.fr       */
+/*   Updated: 2016/03/12 11:35:03 by apellicc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,22 +18,14 @@ char	**ft_mapalloc(char **map, int t)
 	int		i;
 
 	i = -1;
-	ft_putnbr(t);
-	ft_putendl("num alloc  ");
 	newmap = malloc(sizeof(char *) * (t + 1));
 	ft_memset(newmap, '.', t);
-	ft_putendl("------------------------");
-	ft_putendl("new map");
-	//ft_puttab(newmap);
 	newmap[t] = NULL;
 	while (++i < t)
 	{
 		newmap[i] = malloc(sizeof(char) * (t + 1));
-		ft_putendl("avant bzero");
-		ft_putendl("avant memset");
 		ft_memset(newmap[i], '.', t);
 		newmap[i][t] = '\0';
-		//sleep(2);
 	}
 	if (map)
 	{
@@ -42,7 +34,5 @@ char	**ft_mapalloc(char **map, int t)
 			free(map[i]);
 		free(map);
 	}
-	ft_puttab(newmap);
-	ft_putendl("------------------------");
 	return (newmap);
 }

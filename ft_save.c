@@ -6,7 +6,7 @@
 /*   By: apellicc <apellicc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/28 17:06:04 by apellicc          #+#    #+#             */
-/*   Updated: 2016/03/11 19:30:35 by apellicc         ###   ########.fr       */
+/*   Updated: 2016/03/14 01:28:01 by apellicc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,25 +25,19 @@ char	**ft_save(char *map)
 	buff = ft_memalloc(600);
 	r = read(fd, buff, BUFF);
 	close(fd);
-	//if (ft_error(buff, r) == 0)
-	//	return (NULL);
-	ft_putendl("avant savalloc");
-	save = ft_savealloc(buff);
-
-	if (!save)
+	if (ft_error(buff, r) == 0)
 		return (NULL);
-	ft_putendl("avant cpy");
+	save = ft_savealloc(buff);
+	if (!save)
+	{
+		free(buff);
+		return (NULL);
+	}
 	save = ft_cpy(buff, save);
 	free(buff);
-	if(!save[0] && !save[0][0])
-		ft_putendl("niaue ta rqce");
-	ft_putendl("avant cpy");
-
 	fd = -1;
 	while (save[++fd] != NULL)
 		save[fd] = ft_replace(save[fd], fd + 65);
-		ft_putendl("fin save");
-
 	return (save);
 }
 
@@ -54,10 +48,8 @@ char	*ft_replace(char *save, char p)
 
 	i = 0;
 	i1 = 0;
-	ft_putendl("avant displace");
 	if (save[0] != '#')
 		i1 = ft_displace(save);
-	ft_putendl("apres diplace");
 	while (save[i] != '\0')
 	{
 		if (save[i] == '#')
@@ -67,7 +59,6 @@ char	*ft_replace(char *save, char p)
 		}
 		i++;
 	}
-	ft_putendl("fin replace");
 	return (save);
 }
 

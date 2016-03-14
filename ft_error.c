@@ -6,7 +6,7 @@
 /*   By: apellicc <apellicc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/28 17:27:38 by apellicc          #+#    #+#             */
-/*   Updated: 2016/03/11 19:30:45 by apellicc         ###   ########.fr       */
+/*   Updated: 2016/03/14 01:49:07 by apellicc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,16 +40,17 @@ int ft_error(char *s, int r)
     i = 20;
 	if (r > 546)
 		return (0);
-    if((strlen(s) % 23) != 0)
+    if((ft_strlen(s) % 23) != 0)
         return (0);
     while(s[i])
     {
         if((s[i] != '\n' && s[i] != '\0') || maft(s, i) == 0)
         {
-            printf("pour i=%d s[i] :%c\n", i,  s[i]);
+			free(s);
             return (0);
         }
-        i += 21;
+		if (s[i + 21])
+			i += 21;
     }
     return(1);
 }
