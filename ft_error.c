@@ -6,7 +6,7 @@
 /*   By: apellicc <apellicc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/28 17:27:38 by apellicc          #+#    #+#             */
-/*   Updated: 2016/03/14 01:49:07 by apellicc         ###   ########.fr       */
+/*   Updated: 2016/03/14 17:27:13 by gmorer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ static int maft(char *s, int x)
     int i;
     int countpoint;
     int countcrx;
+	ft_putendl("sans maft");
     countpoint = 0;
     countcrx = 0;
     i = 0;
@@ -40,10 +41,9 @@ int ft_error(char *s, int r)
     i = 20;
 	if (r > 546)
 		return (0);
-    if((ft_strlen(s) % 23) != 0)
-        return (0);
     while(s[i])
     {
+		ft_putendl("dans while");
         if((s[i] != '\n' && s[i] != '\0') || maft(s, i) == 0)
         {
 			free(s);
