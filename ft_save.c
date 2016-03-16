@@ -6,7 +6,7 @@
 /*   By: apellicc <apellicc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/28 17:06:04 by apellicc          #+#    #+#             */
-/*   Updated: 2016/03/14 17:21:53 by gmorer           ###   ########.fr       */
+/*   Updated: 2016/03/16 22:07:49 by apellicc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ char	**ft_save(char *map)
 	close(fd);
 	if (ft_error(buff, r) == 0)
 		return (NULL);
-	ft_putendl("kmeemflde");
 	save = ft_savealloc(buff);
 	if (!save)
 	{
