@@ -6,16 +6,16 @@
 /*   By: apellicc <apellicc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/06 03:27:25 by apellicc          #+#    #+#             */
-/*   Updated: 2016/03/11 19:04:46 by apellicc         ###   ########.fr       */
+/*   Updated: 2016/03/17 11:11:05 by gmorer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-static int 	ft_line(char *save)
+static int		ft_line(char *save)
 {
-	int i;
-	int line;
+	int	i;
+	int	line;
 
 	i = 0;
 	line = 0;
@@ -28,11 +28,11 @@ static int 	ft_line(char *save)
 	return (line);
 }
 
-int			ft_displace(char *save)
+int				ft_displace(char *save)
 {
-	int i;
-	int i1;
-	int tmp;
+	int	i;
+	int	i1;
+	int	tmp;
 
 	i = 0;
 	i1 = 19;

@@ -6,7 +6,7 @@
 /*   By: apellicc <apellicc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/10 21:03:46 by apellicc          #+#    #+#             */
-/*   Updated: 2016/03/10 23:03:14 by apellicc         ###   ########.fr       */
+/*   Updated: 2016/03/17 11:08:34 by gmorer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,5 @@ int		inc_max(int *coord, int max, int i);
 int		ft_place_tetri(char **map, char *save, int *coord, int max);
 int		**ft_ini_coord(int nb_piece, int **old_coord);
 char	**ft_rp1(int **coord, int *max, int *i, char **map);
-//static void ft_else(char **map, char savei, int y, int *x);
 
 #endif
