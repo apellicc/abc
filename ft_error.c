@@ -6,7 +6,7 @@
 /*   By: gmorer <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/10 16:32:27 by gmorer            #+#    #+#             */
-/*   Updated: 2016/03/16 22:09:20 by apellicc         ###   ########.fr       */
+/*   Updated: 2016/03/17 10:37:46 by gmorer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static int		countlink(char *s, int i, int x)
 		link++;
 	if (x < 15 && s[i + x + 5] == '#')
 		link++;
-	if (x > 5 && s[i + x - 5] == '#')
+	if (x >= 5 && s[i + x - 5] == '#')
 		link++;
 	return (link);
 }
@@ -45,7 +45,6 @@ static int		checkjoin(char *s, int i)
 			crx++;
 		x++;
 	}
-
 	return (rslt - 6);
 }
 
